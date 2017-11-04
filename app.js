@@ -19,10 +19,7 @@ var studentRoutes = require("./routes/students"),
     indexRoute = require("./routes/index")
 
 
-// //connect to mongoose db called WhiteBoard
-// mongoose.connect(process.env.DATABASEURL);
-// //mongoose.connect("mongodb://cortehz:tarantulA1@ds013330.mlab.com:13330/yelpcamp", { useMongoClient: true });
-mongoose.connect("mongodb://cortehz:manchesteR007@ds037622.mlab.com:37622/whiteboard", { useMongoClient: true });
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
