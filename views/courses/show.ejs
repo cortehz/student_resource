@@ -1,0 +1,122 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <h1 class="text-center">
+            The Ultimate
+            <%= course.name %> guide.
+        </h1>
+        <hr>
+        <div class="row">
+            <!-- <div class="col-md-2">
+            <div class="list-group">
+                <p class="lead">Choose a different course</p>
+                <a class="btn btn-primary">All Courses</a>
+            </div>
+        </div> -->
+            <div class="col-md-2">
+                <h4>Want to Participate?</h4>
+                <a href="/courses/<%= course._id %>/students/new" class="btn btn-primary">Register</a>
+            </div>
+            <div class="col-md-8">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="<%= course.image %>">
+                    <div class="caption-full">
+                        <h4 class="pull-right">
+                            <% course.price %>
+                        </h4>
+                        <a>
+                            <h4>
+                                <%= course.name %>
+                            </h4>
+                        </a>
+
+                        <p>
+                            <p>
+                                <%= course.description %>
+                            </p>
+                        </p>
+                        <p>
+                            <em><strong>Course Lecturer:</strong>
+                                <%= course.author.username.toUpperCase() %>
+                            </em>
+                        </p>
+
+                        <% if(currentUser && course.author.id.equals(currentUser._id)){ %>
+                            <a class="btn btn-warning" href="/courses/<%= course._id %>/edit">Edit course</a>
+                            <form id="delete-form" action="/courses/<%= course._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                            <% } %>
+
+                    </div>
+
+                </div>
+
+
+                <div class="text-center">
+                    <a class="btn btn-large btn-primary" href="/courses/<%= course._id %>/students/new ">Add a student</a>
+                </div>
+
+
+
+                <hr>
+                <div class="container">
+                        <h1 class="text-left">Already Registered Student's List</h1>
+                        
+                        <% course.students.forEach(function(student){ %>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>Full Name:</strong>
+                                    <%= student.text %>
+                                </div>
+                            </div>
+                            
+                        
+                            <% if(currentUser && student.author.id.equals(currentUser._id)){ %>
+                                <a class="btn btn-xs btn-warning" href="/courses/<%= course._id %>/students/<%= student._id %>/edit">Edit
+                                </a>
+        
+                                <form class="delete-form form-group" action="/courses/<%= course._id %>/students/<%= student._id %>?_method=DELETE" method="POST">
+                                    <input type="submit" class="btn btn-xs btn-danger" value="delete">
+                                </form>
+                                <br>
+                                <br>    
+                            
+                                <% } %>
+        
+                                    <% }) %>
+                                    
+                    </div>
+                </div>
+            </div>
+        
+            </div>
+    
+    
+                </div>
+          <br>      
+    <div class="footer-bottom2">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                    <div class="copyright">
+
+                        © 2017, WhiteBoard. All rights reserved
+
+                    </div>
+
+                </div>
+            </div>
+            </div>
+    </div>
+    
+
+    </div>
+
+    </body>
+
+    </html>

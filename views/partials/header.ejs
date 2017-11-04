@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">        
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+        
+
+    </head>
+
+    <body>
+
+
+            <div class="head-class container-fluid">
+                    <div class="row">
+                        
+                        <div class="container header col-xs-12">
+                            <div class="logo col-xs-1 col-xs-offset-1">
+                                    <div class="navbar-header">
+                                            <a class="navbar-brand" href="/"><span>White</span>Board
+                                            </a>
+                                        </div>
+                            </div>
+                            <div class="col-xs-4 col-xs-offset-5">
+                                    <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="/courses">All Courses</a></li>
+                                        <% if(!currentUser){ %>
+                                            <li><a href="/login">Login</a></li>
+                                            <li><a href="/register">Register</a></li>
+                                        <% } else { %>
+                                            <li><a href="#">Signed In as: <%= currentUser.username.toUpperCase() %> </a></li>  
+                                            <li><a href="/logout">Logout</a></li>                        
+                                        <% } %>
+                                      
+                                        
+                                    </ul>
+                            </div>
+                        </div>
+<br>
+<br>
+                        <div class="container">
+                            <div class="col-md-8 col-xs-8 center-block">
+                                    <% if(error && error.length > 0){ %>
+                                        <br>
+                                        <br>
+                                        <div class="alert alert-danger" role="alert">
+                                                <%= error %>
+                                        </div>
+                                        <br>
+                                   <% } %>
+                            </div>
+                              
+                                   
+                            </div>
+                            <div class="container">
+                                    <div class="col-md-8 col-xs-8 center-block">
+                                    <% if(success && success.length > 0){ %>
+                                        <br>
+                                        <br>
+                                    <div class="alert alert-success" role="alert">
+                                            <%= success %>
+                                    </div>
+                                    <br>
+                                    <% } %>
+                                    </div>
+                            </div>
+                           <br>
+                        <br>
+                        
+                    </div>
+                </div>
+
+        
+                
+               

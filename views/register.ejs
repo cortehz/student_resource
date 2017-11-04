@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+   
+<h1 class="text-center">STUDENT REGISTRATION</h1>
+<p class="text-center">Are you a student? create an account to partipate in a Course</p>
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Fill out the Form</h3>
+                 </div>
+                  <div class="panel-body">
+                    <form accept-charset="UTF-8" role="form" action="/register" method="POST">
+                    <fieldset>
+                          <div class="form-group">
+                            <input class="form-control" placeholder="Username" name="username" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
+                        </div>
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Register">
+                    </fieldset>
+                      </form>
+                </div>
+            </div>
+            <div class="center-block">
+                    <p>If you already own an account, please <a href="/login">Sign In</a></p>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

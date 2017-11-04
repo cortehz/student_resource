@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    <div class="row">
+            <h1 class="text-center" style="margin-bottom:3%;">Edit student</h1>
+                <div style="width: 30%; margin: 0 auto;">
+                        <form action="/courses/<%= course_id %>/students/<%= student._id %>?_method=PUT" method="POST">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<%= student.text %>" name="student[text]" required>
+                            </div>
+
+                            <div class="delete-form form-group">
+                                <button class="btn btn-primary btn-lg btn-block">Edit student</button>
+                            </div>
+
+                        </form>
+                        <a href="/courses">Go Back</a>
+                </div>
+       
+
+    </div>
+
+</div>
+<% include ../partials/footer %>

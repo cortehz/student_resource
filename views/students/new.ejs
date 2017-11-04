@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    <div class="row">
+            <h1 class="text-center" style="margin-bottom:3%;">Add a new student to <%= course.name %></h1>
+                <div style="width: 30%; margin: 0 auto;">
+                        <form action="/courses/<%= course._id %>/students" method="POST">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Full Name" name="student[text]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-lg btn-block">Register Student</button>
+                            </div>
+
+                        </form>
+                        <a href="/courses">Go Back</a>
+                </div>
+       
+
+    </div>
+
+</div>
+<% include ../partials/footer %>

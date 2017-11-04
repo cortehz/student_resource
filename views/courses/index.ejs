@@ -1,0 +1,69 @@
+    <% include ../partials/header %>
+
+        <h1 class="display-4 text-center">Available Courses</h1>
+        <hr class="bg-dark mb-4 w-25">
+
+        <div class="container container mt-4 mb-5">
+            <% courses.forEach(function(course){ %>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<%= course.image %>" alt="Card image cap">
+                            <div class="card-block p-3">
+                                <h4 class="card-title">
+                                    <%= course.name %>
+                                </h4>
+                                
+                                <a href="/courses/<%= course._id %>" class="btn btn-primary btn-small rounded-0 mb-2 courses">Details</a>
+                                <a href="/courses/<%= course._id %>/students/new" class="btn btn-primary btn-small rounded-0 mb-2 courses">Register</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+                
+        <!-- Card -->
+        </div>
+        <br>
+</div>
+    <section class="new-course">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="new col-md-8">
+                    <p>Do you have a course you want to teach? Add one so students can register</p>
+                </div>
+                <div class="new col-md-4">
+                    <p>
+                        <a class="btn btn-primary btn-lg new-courses" href="/courses/new">Add a new course</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-bottom2">
+        
+            <div class="container">
+        
+                <div class="row">
+        
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        
+                        <div class="copyright">
+        
+                            © 2017, WhiteBoard. All rights reserved
+        
+                        </div>
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+    
+    </body>
+    
+    </html>
